@@ -1,0 +1,111 @@
+{
+  "name": "Asiya Maryam",
+  "email": "asiyamaryam9a@gmail.com",
+  "phone": "+91 9600273822",
+  "location": "Chennai, Tamil Nadu",
+  "links": [],
+  "summary": null,
+  "experience": [],
+  "education": [],
+  "projects": [
+    {
+      "name": "Microsoft Azure: Streamline Business Workflows with AI Chat",
+      "description": null,
+      "tech": [
+        "Microsoft Azure"
+      ]
+    },
+    {
+      "name": "EF Standard English Test: B2/C1 English Proficiency",
+      "description": null,
+      "tech": [
+        "EF Standard English Test"
+      ]
+    },
+    {
+      "name": "Salesforce Superbadge: Flow Fundamentals",
+      "description": null,
+      "tech": [
+        "Salesforce"
+      ]
+    },
+    {
+      "name": "NASSCOM: Digital Program Certification",
+      "description": null,
+      "tech": [
+        "NASSCOM"
+      ]
+    },
+    {
+      "name": "Infosys Springboard: Programming Foundations",
+      "description": null,
+      "tech": [
+        "Infosys Springboard"
+      ]
+    },
+    {
+      "name": "Power BI - Visualize to Realize: NSDC / FacePrep",
+      "description": null,
+      "tech": [
+        "Power BI"
+      ]
+    }
+  ],
+  "internships": [
+    {
+      "company": "CodeAlpha",
+      "dates": "May 2026 - June 2026",
+      "jobTitle": "AI Intern",
+      "description": "Developed and tested Python-based machine learning modules for structured virtual project briefs. Handled data preprocessing, model implementation, and feature validation to improve project output accuracy. Delivered complete task submissions ahead of project deadlines while working remotely."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Smart India Hackathon",
+      "date": null,
+      "description": "Selected as a participant; collaborated in a team to build tech solutions for real-world problems."
+    },
+    {
+      "name": "English Literary Competition",
+      "date": null,
+      "description": "Awarded 2nd Place at Vivekananda College inter-collegiate competition."
+    }
+  ],
+  "achievements": [
+    {
+      "type": "Language",
+      "name": "B2/C1 English Proficiency",
+      "date": null,
+      "description": null
+    },
+    {
+      "type": "Certification",
+      "name": "NASSCOM: Digital Program Certification",
+      "date": null,
+      "description": null
+    },
+    {
+      "type": "Certification",
+      "name": "Infosys Springboard: Programming Foundations",
+      "date": null,
+      "description": null
+    }
+  ],
+  "publications": null,
+  "coursework": null,
+  "languages": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "SQL",
+    "HTML",
+    "CSS"
+  ],
+  "strengths": null,
+  "weaknesses": null,
+  "missing_information": null,
+  "raw_evidence": {
+    "image": "https://i.imgur.com/MuGdL5q.jpg"
+  },
+  "skills": []
+}

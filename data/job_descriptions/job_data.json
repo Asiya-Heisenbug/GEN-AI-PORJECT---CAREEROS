@@ -1,0 +1,91 @@
+{
+  "job_title": "Machine Learning Engineer",
+  "company": "TechNova Solutions",
+  "location": "Chennai, India",
+  "employment_type": "Full-time",
+  "summary": null,
+  "technical_skills": [
+    "Python",
+    "Machine Learning algorithms",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "Data preprocessing and feature engineering",
+    "Supervised and unsupervised learning",
+    "Deep Learning",
+    "TensorFlow",
+    "PyTorch",
+    "REST APIs",
+    "JSON",
+    "Git",
+    "GitHub",
+    "SQL",
+    "Databases",
+    "Generative AI",
+    "LangChain",
+    "LangGraph",
+    "RAG pipelines",
+    "Vector databases",
+    "Docker",
+    "Cloud platforms",
+    "FastAPI",
+    "Flask",
+    "Model deployment"
+  ],
+  "soft_skills": [
+    "Problem-solving",
+    "Analytical skills",
+    "Curious and willing to learn quickly",
+    "Able to build projects independently",
+    "Comfortable debugging and experimenting",
+    "Good understanding of software development fundamentals",
+    "Strong communication and teamwork skills"
+  ],
+  "responsibilities": [
+    "Build and train Machine Learning and Deep Learning models",
+    "Collect, clean, preprocess, and analyze structured and unstructured datasets",
+    "Develop end-to-end ML pipelines for training and inference",
+    "Evaluate model performance using appropriate metrics",
+    "Work with APIs and integrate ML models into web applications",
+    "Deploy models using cloud platforms or containerized environments",
+    "Collaborate with software engineers, data scientists, and product teams",
+    "Perform feature engineering and data validation",
+    "Optimize models for performance, scalability, and accuracy",
+    "Stay updated with new developments in AI, Machine Learning, and Generative AI"
+  ],
+  "qualifications": [
+    "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field"
+  ],
+  "preferred_qualifications": [
+    "Experience with Generative AI or LLMs",
+    "Knowledge of LangChain or LangGraph",
+    "Experience with RAG pipelines and vector databases",
+    "Familiarity with Docker",
+    "Knowledge of cloud platforms such as AWS, Azure, or Google Cloud",
+    "Experience with FastAPI or Flask",
+    "Knowledge of model deployment and MLOps concepts"
+  ],
+  "experience_requirements": [
+    "Fresher / 0\u20132 Years"
+  ],
+  "education_requirements": [
+    "Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, or a related field"
+  ],
+  "certifications": [],
+  "keywords": [
+    "Machine Learning",
+    "Deep Learning",
+    "Python",
+    "AI",
+    "Data Science",
+    "Computer Vision",
+    "NLP",
+    "Text Classification",
+    "Recommendation Systems",
+    "Cloud Platforms",
+    "Docker",
+    "FastAPI",
+    "Flask",
+    "MLOps"
+  ]
+}
