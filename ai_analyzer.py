@@ -10,6 +10,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+def _setting(name: str, default: str) -> str:
+    value = os.getenv(name)
+    if value:
+        return value
+    try:
+        import streamlit as st
+
+        return str(st.secrets.get(name, default))
+    except (FileNotFoundError, KeyError):
+        return default
+
+
 SYSTEM_PROMPT = """You are a meticulous resume analyst. Extract EVERY visible fact from every page.
 Return only valid JSON with these keys: name, email, phone, location, links, summary, skills,
 experience, education, projects, internships, certifications, achievements, publications,
@@ -32,7 +44,7 @@ def analyze_with_ollama(
         user_message["images"] = image_payload
     payload = json.dumps(
         {
-            "model": model or os.getenv("OLLAMA_EXTRACTION_MODEL", "llama3.2"),
+            "model": model or _setting("OLLAMA_EXTRACTION_MODEL", "llama3.2"),
             "stream": False,
             "messages": [
                 {"role": "system", "content": system_prompt},
@@ -47,19 +59,19 @@ def analyze_with_ollama(
         payload_data["options"] = {"temperature": 0.2}
     payload = json.dumps(payload_data).encode("utf-8")
     request = Request(
-        f"{os.getenv('OLLAMA_HOST', 'http://localhost:11434').rstrip('/')}/api/chat",
+        f"{_setting('OLLAMA_HOST', 'http://localhost:11434').rstrip('/')}/api/chat",
         data=payload,
         headers={"Content-Type": "application/json"},
         method="POST",
     )
 
-    timeout = int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "900"))
+    timeout = int(_setting("OLLAMA_TIMEOUT_SECONDS", "900"))
     try:
         with urlopen(request, timeout=timeout) as response:
             content = json.loads(response.read().decode("utf-8")).get("message", {}).get("content")
     except HTTPError as error:
         if error.code == 404:
-            raise RuntimeError(f"Ollama model not found: {model or os.getenv('OLLAMA_EXTRACTION_MODEL', 'llama3.2')}") from error
+            raise RuntimeError(f"Ollama model not found: {model or _setting('OLLAMA_EXTRACTION_MODEL', 'llama3.2')}") from error
         raise RuntimeError(f"Ollama returned HTTP {error.code}.") from error
     except URLError as error:
         raise RuntimeError("Could not connect to Ollama. Start it with: ollama serve") from error
@@ -89,7 +101,7 @@ def analyze_resume(resume_text: str, images: list[bytes] | None = None) -> dict[
     return analyze_with_ollama(
         resume_text,
         SYSTEM_PROMPT,
-        model=os.getenv("OLLAMA_EXTRACTION_MODEL", "llama3.2"),
+        model=_setting("OLLAMA_EXTRACTION_MODEL", "llama3.2"),
     )
 
 
@@ -110,7 +122,7 @@ GITHUB PROJECTS:
     return analyze_with_ollama(
         prompt.format(profile=json.dumps(profile), job=json.dumps(job), github=json.dumps(github_context or {})),
         "You are a rigorous hiring analyst. Use only supplied facts.",
-        model=os.getenv("OLLAMA_MATCHING_MODEL", "qwen2.5vl:7b"),
+        model=_setting("OLLAMA_MATCHING_MODEL", "qwen2.5vl:7b"),
     )
 
 
@@ -137,7 +149,7 @@ data is supplied."""
     result = analyze_with_ollama(
         prompt.format(profile=json.dumps(profile), job=json.dumps(job), comparison=json.dumps(comparison), github=json.dumps(github_context or {}), question=question),
         "You are a practical career coach grounded in supplied resume, JD, comparison, and GitHub evidence.",
-        model=os.getenv("OLLAMA_MATCHING_MODEL", "qwen2.5vl:7b"),
+        model=_setting("OLLAMA_MATCHING_MODEL", "qwen2.5vl:7b"),
         json_mode=False,
     )
     return str(result)

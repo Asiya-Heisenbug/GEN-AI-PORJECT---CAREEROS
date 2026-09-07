@@ -28,6 +28,20 @@ technical skills, soft skills, responsibilities, qualifications, certifications,
    streamlit run app.py
    ```
 
+## Streamlit Community Cloud
+
+1. Create an app from this GitHub repository, using `main` as the branch and `app.py` as the main file.
+2. In the app settings, add these secrets with values for a publicly reachable Ollama-compatible service:
+
+   ```toml
+   OLLAMA_HOST = "https://your-ollama-host.example.com"
+   OLLAMA_EXTRACTION_MODEL = "llama3.2"
+   OLLAMA_MATCHING_MODEL = "qwen2.5vl:7b"
+   OLLAMA_TIMEOUT_SECONDS = "900"
+   ```
+
+   Streamlit Cloud cannot access Ollama running on your personal computer at `localhost:11434`.
+
 `llama3.2` extracts the resume and JD into JSON. `qwen2.5vl:7b` receives those JSON files for
 matching, charts, explanations, and chatbot questions. The latest validated result is stored in `data/resumes/resume_data.json`.
 Job-description results are stored in `data/job_descriptions/job_data.json`.
